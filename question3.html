@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery DOM Operations</title>
+
+  <!-- jQuery CDN -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+    }
+
+    .myStyle {
+      background-color: rgb(183, 145, 83);
+      padding: 16px;
+      border-radius: 8px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 15px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>jQuery DOM Operations</h2>
+
+  <!-- Element for text modification -->
+  <div id="myElement">Original Text</div>
+
+  <br>
+
+  <!-- Element for class styling -->
+  <div id="myDIV">
+    <p>I am a myDIV.</p>
+  </div>
+
+  <br>
+
+  <!-- Button for click event -->
+  <button id="myButton">Click me</button>
+
+  <script>
+
+    // Ensure the page is fully loaded before running jQuery
+    $(document).ready(function() {
+
+      // a) Change text content
+      // Equivalent to: element.textContent = "Modified Text";
+      $("#myElement").text("Modified Text");
+
+      // b) Add CSS class
+      // Equivalent to: element.classList.add("myStyle");
+      $("#myDIV").addClass("myStyle");
+
+      // c) Handle button click event
+      // Equivalent to: addEventListener("click", function() {...});
+      $("#myButton").click(function() {
+        alert("Button clicked!");
+      });
+
+    });
+
+  </script>
+
+</body>
+</html>
