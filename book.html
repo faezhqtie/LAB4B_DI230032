@@ -2,13 +2,12 @@
 <html>
 <head>
   <title>Q2 JSON Output</title>
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
 <body>
 
-  <h2>Q2</h2>
+  <h2>Q2 Book Information</h2>
 
   <p id="firstTitle"></p>
   <p id="secondAuthor"></p>
@@ -25,16 +24,17 @@
         allGenres += "Book " + (i + 1) + ": " + data.books[i].genres.join(", ") + "<br>";
       }
 
-      // Display on webpage
       $("#firstTitle").html("<b>Title of the first book:</b> " + firstTitle);
       $("#secondAuthor").html("<b>Author of the second book:</b> " + secondAuthor);
       $("#genres").html("<b>Genres of all books:</b><br>" + allGenres);
 
-      // Display in console
       console.log("Title of the first book: " + firstTitle);
       console.log("Author of the second book: " + secondAuthor);
       console.log("Genres of all books:");
-      console.log(allGenres);
+
+      for (let i = 0; i < data.books.length; i++) {
+        console.log("Book " + (i + 1) + " Genres: " + data.books[i].genres.join(", "));
+      }
 
     }).fail(function() {
       alert("JSON file not found or has an error. Please check book.json file name and location.");
